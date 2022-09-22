@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person info</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="conteiner">
+        <h1>Information</h1>
+        <div th:object="${person}">
+            <p><strong>Name: </strong>[[*{name}]]</p>
+            <p><strong>Age: </strong>[[${age}]]</p>
+            <p><strong>Address: </strong>[[*{address}]]</p>
+        </div>
+    </div>
+</body>
+</html>

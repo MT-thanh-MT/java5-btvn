@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person info</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container w-75">
+    <form action="product-detail" method="post" th:object="${product}">
+        <div class="form-group">
+            <label for="Name">Name: <i class="text-danger" th:text="${nameError}"></i></label>
+            <input type="text" name="productName" th:field="*{productName}" class="form-control" id="Name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="Price">Price: <i class="text-danger" th:text="${priceError}"></i></label>
+            <input type="number" name="price" th:field="*{price}" class="form-control" id="Price"
+                   placeholder="Enter Price">
+        </div>
+        <div class="form-group">
+            <label for="Quantity">Quantity: <i class="text-danger" th:text="${quantityError}"></i></label>
+            <input type="number" name="quantity" th:field="*{quantity}" class="form-control" id="Quantity"
+                   placeholder="Enter Quantity">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>

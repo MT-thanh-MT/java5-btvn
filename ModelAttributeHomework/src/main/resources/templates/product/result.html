@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="conteiner">
+    <h1>Product Detail</h1>
+    <div th:object="${product}">
+        <p><strong>Name: </strong>[[*{productName}]]</p>
+        <p><strong>Price: </strong>$[[*{price}]]</p>
+        <p><strong>Quantity: </strong>[[*{quantity}]]</p>
+        <p><strong>Date: </strong>[[${#dates.format(product.date, 'dd-MM-yyyy HH:mm')}]]</p>
+        <p><strong>Total: </strong>$[[*{total}]]</p>
+    </div>
+</div>
+</body>
+</html>

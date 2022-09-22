@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person info</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container w-75">
+    <form action="person-info" method="post" th:object="${person}">
+        <div class="form-group">
+            <label for="Name">Name: <i class="text-danger" th:text="${nameError}"></i></label>
+            <input type="text" name="name" th:field="*{name}" class="form-control" id="Name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="Brithday">Brith day: <i class="text-danger" th:text="${brithdayError}"></i></label>
+            <input type="date" name="brithday" th:field="*{brithday}" class="form-control" id="Brithday"
+                   placeholder="Enter Brithday">
+        </div>
+        <div class="form-group">
+            <label for="Address">Address: <i class="text-danger" th:text="${addressError}"></i></label>
+            <input type="text" name="address" th:field="*{address}" class="form-control" id="Address"
+                   placeholder="Enter Address">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
